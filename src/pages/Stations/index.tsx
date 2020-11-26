@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import axios from 'axios';
 
@@ -45,7 +46,10 @@ const Stations: React.FC = () => {
   return (
     <>
       {stations.map((station: CTAStations) => (
-        <li key={station.STATION_NAME}>
+        <Link
+          key={station.STATION_NAME}
+          to={`/details/${station.STATION_NAME}`}
+        >
           {station.STATION_NAME}
           {station.STOPS.map((stop: CTAStationStops) => (
             <div key={stop.STOP_ID}>
@@ -57,7 +61,7 @@ const Stations: React.FC = () => {
               <p>{stop.LOCATION}</p>
             </div>
           ))}
-        </li>
+        </Link>
       ))}
     </>
   );
