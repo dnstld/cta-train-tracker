@@ -1,20 +1,23 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Layout: React.FC = ({ children }) => (
   <div className="w-screen min-h-screen flex flex-col items-center bg-gray-100 pt-20">
     <nav className="fixed top-0 left-0 z-10 w-full flex bg-gray-700 text-gray-50 p-4">
-      <header className="">
-        <h1 className="flex items-center antialiased tracking-wide font-bold">
-          <span className="flex items-center justify-center w-10 h-10 bg-blue-200 rounded text-gray-800 mr-2">
-            CTA
-          </span>
-          <div>
-            Train Tracker
-            <span className="block font-normal text-xs italic">
-              Get estimated arrival times
+      <header>
+        <Link to="/">
+          <h1 className="flex items-center antialiased tracking-wide font-bold">
+            <span className="flex items-center justify-center w-10 h-10 bg-white rounded text-gray-800 mr-2">
+              CTA
             </span>
-          </div>
-        </h1>
+            <div>
+              Train Tracker
+              <span className="block font-normal text-xs italic">
+                Get estimated arrival times
+              </span>
+            </div>
+          </h1>
+        </Link>
       </header>
     </nav>
 

@@ -56,20 +56,20 @@ const Stations: React.FC = () => {
 
   return (
     <>
-      <header className="p-4">
-        <h1 className="text-4xl antialiased font-black tracking-wide text-gray-800">
+      <header className="mb-8">
+        <h1 className="text-4xl lg:text-6xl antialiased font-black tracking-wide text-gray-800">
           Stations
         </h1>
       </header>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6 xl:gap-8 p-4">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6 xl:gap-8">
         {stations.map((station: CTAStations) => (
           <Link
             key={station.STATION_NAME}
             to={`/details/${station.STATION_NAME}`}
             className="transition shadow-sm hover:shadow-lg transform scale-100 hover:scale-105 focus:scale-105 bg-gray-50 hover:bg-white focus:outline-none focus:bg-white rounded-t-2xl select-none p-4"
           >
-            <header className="text-xl font-bold text-gray-800 mb-4">
+            <header className="text-2xl font-bold text-gray-800 mb-4">
               <h2>{station.STATION_NAME}</h2>
             </header>
 

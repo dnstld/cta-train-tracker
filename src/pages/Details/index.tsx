@@ -61,19 +61,31 @@ const Details: React.FC = () => {
 
   return (
     <>
-      <h1>Station: {params.station}</h1>
+      <header className="mb-8">
+        <h1 className="text-4xl lg:text-6xl antialiased font-black tracking-wide text-gray-800">
+          {params.station}
+        </h1>
+        <h2 className="text-2xl lg:text-4xl antialiased font-black tracking-wide text-gray-600">
+          Estimated arrivals
+        </h2>
+      </header>
 
-      {stationLocations &&
-        stationLocations.map((location: StopsLocation) => (
-          <div key={location.stop_id}>
-            <div>
-              <p>{location.station_name}</p>
-              <p>{location.stop_name}</p>
+      <div className="grid gap-4">
+        {stationLocations &&
+          stationLocations.map((location: StopsLocation) => (
+            <div
+              key={location.stop_id}
+              className={`shadow-sm bg-${
+                location.blue ? 'blue' : 'red'
+              }-200 rounded p-4`}
+            >
+              <Arrivals
+                mapId={location.map_id}
+                lineColor={location.blue ? 'Blue' : 'Red'}
+              />
             </div>
-
-            <Arrivals mapId={location.map_id} />
-          </div>
-        ))}
+          ))}
+      </div>
     </>
   );
 };
