@@ -7,7 +7,7 @@ import Details from '../pages/Details';
 const Routes: React.FC = () => (
   <Switch>
     <Route exact path="/" component={Stations} />
-    <Route path="/details" component={Details} />
+    <Route path="/details/:station+" component={Details} />
   </Switch>
 );
 
